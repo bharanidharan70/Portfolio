@@ -4,7 +4,7 @@ import styles from '@/styles/Navbar.module.css'
 export default function Navbar() {
   return (
     <nav className={styles.nav}>
-      <a href="#" className={styles.logo}>bm<span>✦</span></a>
+      <a href="#" className={styles.logo}>Bm<span>✦</span></a>
       <div className={styles.links}>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
