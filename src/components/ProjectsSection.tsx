@@ -1,31 +1,47 @@
 'use client'
 import { useEffect, useRef } from 'react'
 import styles from '@/styles/Sections.module.css'
+import Image from "next/image";
 
 const projects = [
   {
     idx: '01',
-    title: 'SpicyHub Restaurant Website',
-    desc: 'Fully responsive restaurant UI built with HTML & CSS. Clean layout with user-friendly navigation and appealing food presentation.',
-    tags: ['HTML', 'CSS', 'Responsive UI'],
-    type: 'Website',
-    link: null,
+    title: 'Pizza Ordering Mobile App',
+    desc: 'Modern food delivery mobile app designed in Figma with delivery, takeaway and promotional experiences.',
+    tags: ['Figma', 'UI/UX', 'Prototype'],
+    type: 'Case Study',
+    image: '/projects/pizza-app.png',
+    link: 'https://www.figma.com/design/CbVIWK5mpyKuDI570u2MUW/Pizza-app?node-id=0-1&t=UPSInMRJcRuBFDmc-1',
   },
+
   {
     idx: '02',
     title: 'GamingHub Web Application',
-    desc: 'Full-stack web app built with HTML, CSS, Bootstrap, PHP & MySQL. Created user-based interactions and data storage.',
-    tags: ['HTML', 'CSS', 'Bootstrap', 'PHP', 'MySQL'],
-    type: 'Web App',
+    desc: 'Full-stack gaming marketplace built using PHP & MySQL.',
+    tags: ['PHP', 'MySQL', 'Bootstrap'],
+    type: 'Web Application',
+    image: '/projects/gaminghub.png',
     link: 'https://gaminghubstore.ct.ws/',
   },
+
   {
     idx: '03',
-    title: 'StylBazaar E-commerce Website',
-    desc: 'Built using WordPress + Elementor with customized theme and product pages. Implemented SEO and responsive design.',
-    tags: ['WordPress', 'Elementor', 'SEO'],
-    type: 'E-commerce',
+    title: 'StylBazaar E-Commerce',
+    desc: 'WordPress ecommerce website with SEO and Elementor customization.',
+    tags: ['WordPress', 'SEO', 'Elementor'],
+    type: 'WordPress',
+    image: '/projects/stylebazaar.png',
     link: 'https://stylebazaar.ct.ws/',
+  },
+
+  {
+    idx: '04',
+    title: 'SpicyHub Restaurant',
+    desc: 'Responsive restaurant website with modern UI.',
+    tags: ['HTML', 'CSS'],
+    type: 'Frontend',
+    image: '/projects/spicyhub.png',
+    link: null,
   },
 ]
 
@@ -46,11 +62,50 @@ export default function ProjectsSection() {
           {projects.map((p, i) => (
             <div key={p.idx} className={`${styles.projRow} ${styles.reveal}`} style={{ transitionDelay: `${i * 0.09}s` }}>
               <span className={styles.projIdx}>{p.idx}</span>
-              <div className={styles.projContent}>
-                <div className={styles.projTitle}>{p.title}</div>
-                <div className={styles.projDesc}>{p.desc}</div>
-                <div className={styles.projChips}>{p.tags.map(t => <span key={t} className={styles.projChip}>{t}</span>)}</div>
-              </div>
+              <div className={styles.card}>
+  <div className={styles.thumb}>
+    <Image
+      src={p.image}
+      alt={p.title}
+      width={600}
+      height={400}
+      className={styles.projectImg}
+    />
+  </div>
+
+  <div className={styles.cardContent}>
+    <div className={styles.projTitle}>{p.title}</div>
+
+    <div className={styles.projDesc}>
+      {p.desc}
+    </div>
+
+    <div className={styles.projChips}>
+      {p.tags.map((t) => (
+        <span key={t} className={styles.projChip}>
+          {t}
+        </span>
+      ))}
+    </div>
+
+    <div className={styles.cardFooter}>
+      <span className={styles.projType}>
+        {p.type}
+      </span>
+
+      {p.link && (
+        <a
+          href={p.link}
+          target="_blank"
+          rel="noreferrer"
+          className={styles.viewBtn}
+        >
+          View Project →
+        </a>
+      )}
+    </div>
+  </div>
+</div>
               <div className={styles.projMeta}>
                 <div className={styles.projType}>{p.type}</div>
                 {p.link
