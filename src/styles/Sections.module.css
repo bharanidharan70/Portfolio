@@ -1,0 +1,152 @@
+.section { padding: 6rem 0; border-top: 0.5px solid rgba(255,255,255,0.06); }
+.inner { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Typography */
+.eyebrow { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #636360; margin-bottom: 0.5rem; }
+.heading { font-family: var(--font-syne), sans-serif; font-size: 1.6rem; font-weight: 700; color: #eeeae4; margin-bottom: 0.35rem; }
+.sub { font-size: 13px; color: #636360; margin-bottom: 2rem; }
+
+/* About Bio */
+.aboutBio { font-size: 15px; color: #888884; line-height: 1.95; max-width: 720px; margin-bottom: 2.5rem; }
+
+/* Skills */
+.skillsWrap { display: flex; flex-direction: column; gap: 0.85rem; }
+.skillGroup {
+  display: flex; align-items: flex-start; gap: 1.5rem;
+  padding: 0.9rem 1.2rem; background: #141416;
+  border: 0.5px solid rgba(255,255,255,0.07);
+  border-radius: 12px; transition: border-color 0.2s;
+}
+.skillGroup:hover { border-color: rgba(255,255,255,0.13); }
+.skillCat { font-family: var(--font-syne), sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; min-width: 110px; margin-top: 4px; flex-shrink: 0; }
+.skillItems { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.skillChip { background: rgba(255,255,255,0.05); border: 0.5px solid rgba(255,255,255,0.08); border-radius: 100px; padding: 4px 12px; font-size: 12px; color: #888884; transition: color 0.2s, border-color 0.2s; }
+.skillChip:hover { color: #eeeae4; border-color: rgba(255,255,255,0.18); }
+
+/* Experience */
+.expGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 0.5rem; }
+.expColTitle { font-family: var(--font-syne), sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #636360; margin-bottom: 1.5rem; }
+.timeline { display: flex; flex-direction: column; }
+.timelineItem { display: flex; gap: 1rem; padding-bottom: 2rem; position: relative; }
+.timelineItem::before { content: ''; position: absolute; left: 7px; top: 18px; bottom: 0; width: 1px; background: rgba(255,255,255,0.06); }
+.timelineItem:last-child::before { display: none; }
+.timelineDot { width: 15px; height: 15px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; box-shadow: 0 0 0 3px rgba(9,9,10,1), 0 0 0 4px rgba(255,255,255,0.08); }
+.timelineContent { flex: 1; }
+.expRole { font-family: var(--font-syne), sans-serif; font-size: 14px; font-weight: 700; color: #eeeae4; margin-bottom: 0.2rem; }
+.expCompany { font-size: 12px; font-weight: 500; margin-bottom: 0.2rem; }
+.expPeriod { font-size: 11px; color: #636360; margin-bottom: 0.6rem; letter-spacing: 0.04em; }
+.expPoints { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+.expPoints li { font-size: 12px; color: #636360; padding-left: 0.9rem; position: relative; line-height: 1.55; }
+.expPoints li::before { content: '–'; position: absolute; left: 0; color: #3a3a3a; }
+
+/* Projects */
+.projList { border: 0.5px solid rgba(255,255,255,0.07); border-radius: 18px; overflow: hidden; }
+.projRow { display: flex; align-items: center; gap: 1.25rem; padding: 1.5rem 1.75rem; border-bottom: 0.5px solid rgba(255,255,255,0.06); transition: background 0.2s; }
+.projRow:last-child { border-bottom: none; }
+.projRow:hover { background: #1a1a1d; }
+.projRow:hover .projArrow { transform: translate(4px,-4px); color: #b8b0f0; }
+.projIdx { font-family: var(--font-syne), sans-serif; font-size: 11px; color: #636360; min-width: 26px; font-weight: 600; }
+.projContent { flex: 1; }
+.projTitle { font-family: var(--font-syne), sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 0.28rem; color: #eeeae4; }
+.projDesc { font-size: 12px; color: #636360; line-height: 1.55; }
+.projChips { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.65rem; }
+.projChip { background: rgba(255,255,255,0.04); border-radius: 4px; padding: 2px 8px; font-size: 10px; color: #636360; }
+.projMeta { text-align: right; flex-shrink: 0; }
+.projType { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #636360; }
+.projArrow { font-size: 18px; color: #636360; transition: transform 0.2s, color 0.2s; display: block; margin-top: 4px; text-decoration: none; }
+
+/* Process */
+.procGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+.procCard { background: #141416; border: 0.5px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.4rem 1.5rem; transition: border-color 0.25s, background 0.25s; }
+.procCard:hover { border-color: rgba(184,176,240,0.22); background: #1a1a1d; }
+.procStep { font-family: var(--font-syne), sans-serif; font-size: 10px; color: #b8b0f0; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
+.procEmoji { font-size: 1.5rem; margin-bottom: 0.55rem; line-height: 1; display: block; }
+.procTitle { font-family: var(--font-syne), sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 0.35rem; color: #eeeae4; }
+.procDesc { font-size: 12px; color: #636360; line-height: 1.65; }
+
+/* Contact */
+.contactBox { background: #141416; border: 0.5px solid rgba(255,255,255,0.07); border-radius: 22px; padding: 3.5rem 2.5rem; text-align: center; position: relative; overflow: hidden; margin-bottom: 3rem; }
+.contactGlow { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 400px; height: 240px; background: radial-gradient(ellipse, rgba(184,176,240,0.06) 0%, transparent 70%); pointer-events: none; }
+.contactH2 { font-family: var(--font-syne), sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 0.75rem; color: #eeeae4; }
+.contactP { font-size: 13px; color: #636360; line-height: 1.9; margin-bottom: 1.75rem; }
+.contactLinks { display: flex; justify-content: center; gap: 0.6rem; flex-wrap: wrap; }
+.cBtn { display: flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.05); border: 0.5px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 9px 18px; font-size: 12px; color: #888884; text-decoration: none; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+.cBtn:hover { background: rgba(184,176,240,0.1); border-color: rgba(184,176,240,0.3); color: #b8b0f0; }
+
+/* Footer */
+.footerInfo { text-align: center; margin-bottom: 2rem; }
+.footerLocation { font-size: 12px; color: #636360; }
+.footer { text-align: center; padding-top: 2rem; border-top: 0.5px solid rgba(255,255,255,0.06); }
+.footerName { font-family: var(--font-syne), sans-serif; font-size: clamp(2rem, 7vw, 5rem); font-weight: 800; letter-spacing: -0.02em; color: rgba(255,255,255,0.04); line-height: 1; margin-bottom: 1.25rem; user-select: none; }
+.footerCopy { font-size: 11px; color: #636360; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 900px) {
+  .expGrid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .inner { padding: 0 1.5rem; }
+  .section { padding: 4rem 0; }
+  .heading { font-size: 1.35rem; }
+  .procGrid { grid-template-columns: 1fr; gap: 0.7rem; }
+  .skillGroup { flex-direction: column; gap: 0.5rem; }
+  .skillCat { min-width: unset; }
+  .projRow { flex-wrap: wrap; gap: 0.8rem; }
+  .projMeta { width: 100%; display: flex; justify-content: space-between; align-items: center; flex-direction: row-reverse; padding-top: 0.3rem; }
+  .contactBox { padding: 2.5rem 1.5rem; }
+  .contactLinks { gap: 0.5rem; }
+  .cBtn { font-size: 11px; padding: 8px 14px; }
+}
+
+@media (max-width: 480px) {
+  .inner { padding: 0 1.2rem; }
+  .section { padding: 3.5rem 0; }
+  .aboutBio { font-size: 14px; }
+  .projRow { padding: 1.2rem; }
+  .projTitle { font-size: 14px; }
+  .contactH2 { font-size: 1.6rem; }
+  .cBtn { font-size: 11px; padding: 7px 12px; }
+}
+
+/* ── MOBILE CENTER ALIGN ── */
+@media (max-width: 600px) {
+  .section { padding: 3.5rem 0; }
+  .inner { padding: 0 1.25rem; }
+
+  .eyebrow, .heading, .sub, .aboutBio { text-align: center; }
+
+  .aboutBio { font-size: 13.5px; margin-left: auto; margin-right: auto; }
+
+  .skillGroup { flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; }
+  .skillCat { min-width: unset; text-align: center; }
+  .skillItems { justify-content: center; }
+
+  .expColTitle { text-align: center; }
+  .expGrid { grid-template-columns: 1fr; gap: 2rem; }
+  .timelineItem { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .timelineItem::before { display: none; }
+  .timelineDot { display: none; }
+  .expRole, .expCompany, .expPeriod { text-align: left; }
+
+  .projRow { flex-direction: column; gap: 0.6rem; padding: 1.2rem 1rem; }
+  .projIdx { display: none; }
+  .projMeta { display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 100%; }
+  .projTitle { font-size: 14px; }
+
+  .procGrid { grid-template-columns: 1fr; gap: 0.7rem; }
+  .procCard { text-align: center; }
+  .procEmoji { display: block; text-align: center; }
+
+  .contactBox { padding: 2rem 1.25rem; }
+  .contactH2 { font-size: 1.6rem; }
+  .contactLinks { flex-direction: column; align-items: center; gap: 0.5rem; }
+  .cBtn { width: 100%; max-width: 260px; justify-content: center; }
+
+  .footerName { font-size: clamp(1.8rem, 9vw, 3rem); }
+  .footerCopy { font-size: 10px; }
+}
