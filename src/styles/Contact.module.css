@@ -16,7 +16,7 @@
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  opacity: 0.18;
+  opacity: 1;
   filter: grayscale(30%) brightness(0.7);
 }
 .videoOverlay {
