@@ -13,12 +13,26 @@ const projects = [
     type: 'UI/UX Case Study',
     color: '#f0a840',
     figma: 'https://www.figma.com/proto/CbVIWK5mpyKuDI570u2MUW/Pizza-app?node-id=6-28&scaling=scale-down&content-scaling=fixed&starting-point-node-id=6%3A28&page-id=0%3A1',
-    github: null,
+    live: null,
     screens: ['🔐 Login / OTP', '🏠 Home Screen', '🍕 Menu & Deals', '👤 My Account'],
     highlight: true,
   },
   {
     idx: '02',
+    emoji: '🖥️',
+    title: 'Faveo IT Service Desk',
+    subtitle: 'Enterprise UI/UX Redesign',
+    desc: 'Recreated and enhanced the Faveo Helpdesk web interface. Focused on ticket management clarity, information hierarchy and a full structured design system.',
+    tags: ['Figma', 'Design System', 'Enterprise UX', 'B2B UI', 'Typography'],
+    type: 'UI/UX Case Study',
+    color: '#4C6EF5',
+    figma: 'https://www.figma.com/proto/E3KE7ReBy4z0uOrqFotOmr/desk?node-id=59-2&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=40%3A50&page-id=37%3A45',
+    live: null,
+    screens: ['🎫 My Tickets', '📋 Ticket Details', '↩️ Reply Flow', '🎨 Design System'],
+    highlight: true,
+  },
+  {
+    idx: '03',
     emoji: '🛍️',
     title: 'E-Commerce Store',
     subtitle: 'WordPress Development',
@@ -27,37 +41,34 @@ const projects = [
     type: 'WordPress',
     color: '#b8b0f0',
     figma: null,
-    github: null,
     live: 'https://stylebazaar.ct.ws/',
     screens: [],
     highlight: false,
   },
   {
-    idx: '03',
+    idx: '04',
     emoji: '🎮',
     title: 'Gaming Community Platform',
     subtitle: 'Full Stack Web App',
-    desc: 'Full-stack web application built with HTML, CSS, Bootstrap, PHP & MySQL. Features user-based interactions, data storage and a responsive UI.',
+    desc: 'Full-stack web application built with HTML, CSS, Bootstrap, PHP & MySQL. Features user-based interactions and data storage.',
     tags: ['HTML', 'CSS', 'Bootstrap', 'PHP', 'MySQL'],
     type: 'Web App',
     color: '#5dcaa5',
     figma: null,
-    github: null,
     live: 'https://gaminghubstore.ct.ws/',
     screens: [],
     highlight: false,
   },
   {
-    idx: '04',
+    idx: '05',
     emoji: '🍽️',
     title: 'Restaurant Management Website',
     subtitle: 'Frontend Development',
-    desc: 'Fully responsive restaurant UI built with HTML & CSS. Clean layout with user-friendly navigation and visually appealing food presentation.',
+    desc: 'Fully responsive restaurant UI built with HTML & CSS. Clean layout with user-friendly navigation and appealing food presentation.',
     tags: ['HTML', 'CSS', 'Responsive UI'],
     type: 'Website',
     color: '#f4a261',
     figma: null,
-    github: null,
     live: null,
     screens: [],
     highlight: false,
@@ -71,7 +82,7 @@ export default function ProjectsSection() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => e.isIntersecting && e.target.classList.add(styles.visible)),
-      { threshold: 0.08 }
+      { threshold: 0.06 }
     )
     ref.current?.querySelectorAll(`.${styles.reveal}`).forEach(el => observer.observe(el))
   }, [])
@@ -88,14 +99,22 @@ export default function ProjectsSection() {
             <div
               key={p.idx}
               className={`${styles.projCard} ${p.highlight ? styles.projCardFeatured : ''} ${styles.reveal}`}
-              style={{ transitionDelay: `${i * 0.09}s`, borderColor: active === i ? p.color : '' }}
+              style={{
+                transitionDelay: `${i * 0.08}s`,
+                borderColor: active === i ? p.color : '',
+                background: active === i ? `rgba(${p.color},0.04)` : '',
+              }}
               onMouseEnter={() => setActive(i)}
               onMouseLeave={() => setActive(null)}
             >
-              {p.highlight && <div className={styles.featuredTag}>✦ Featured UI/UX Project</div>}
+              {p.highlight && (
+                <div className={styles.featuredTag} style={{ color: p.color, background: `${p.color}15`, border: `0.5px solid ${p.color}35` }}>
+                  ✦ Featured UI/UX Project
+                </div>
+              )}
 
               <div className={styles.projCardTop}>
-                <div className={styles.projEmoji} style={{ background: `${p.color}18` }}>{p.emoji}</div>
+                <div className={styles.projEmoji} style={{ background: `${p.color}15` }}>{p.emoji}</div>
                 <div className={styles.projCardMeta}>
                   <div className={styles.projType} style={{ color: p.color }}>{p.type}</div>
                   <div className={styles.projIdx}>{p.idx}</div>
@@ -108,7 +127,9 @@ export default function ProjectsSection() {
 
               {p.screens.length > 0 && (
                 <div className={styles.projScreens}>
-                  {p.screens.map(s => <span key={s} className={styles.projScreen}>{s}</span>)}
+                  {p.screens.map(s => (
+                    <span key={s} className={styles.projScreen} style={{ color: p.color, background: `${p.color}10`, border: `0.5px solid ${p.color}30` }}>{s}</span>
+                  ))}
                 </div>
               )}
 
@@ -118,12 +139,16 @@ export default function ProjectsSection() {
 
               <div className={styles.projBtns}>
                 {p.figma && (
-                  <a href={p.figma} target="_blank" rel="noreferrer" className={styles.projBtnPrimary} style={{ background: p.color, color: '#09090a' }}>
+                  <a href={p.figma} target="_blank" rel="noreferrer"
+                    className={styles.projBtnPrimary}
+                    style={{ background: p.color, color: '#09090a' }}>
                     View Prototype ↗
                   </a>
                 )}
-                {(p as any).live && (
-                  <a href={(p as any).live} target="_blank" rel="noreferrer" className={styles.projBtnOutline} style={{ borderColor: p.color, color: p.color }}>
+                {p.live && (
+                  <a href={p.live} target="_blank" rel="noreferrer"
+                    className={styles.projBtnOutline}
+                    style={{ borderColor: p.color, color: p.color }}>
                     Live Demo ↗
                   </a>
                 )}
