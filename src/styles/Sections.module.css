@@ -150,3 +150,93 @@
   .footerName { font-size: clamp(1.8rem, 9vw, 3rem); }
   .footerCopy { font-size: 10px; }
 }
+
+/* ── PROJECT CARDS ── */
+.projCards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.projCard {
+  background: #141416; border: 0.5px solid rgba(255,255,255,0.07);
+  border-radius: 18px; padding: 1.6rem;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+  cursor: default; position: relative; overflow: hidden;
+}
+.projCard:hover { background: #1a1a1d; transform: translateY(-3px); }
+.projCardFeatured {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(240,168,64,0.06) 0%, rgba(20,20,22,1) 60%);
+  border-color: rgba(240,168,64,0.2) !important;
+}
+.featuredTag {
+  display: inline-flex; align-items: center;
+  background: rgba(240,168,64,0.12); border: 0.5px solid rgba(240,168,64,0.3);
+  border-radius: 100px; padding: 4px 12px;
+  font-size: 11px; color: #f0a840; margin-bottom: 1.2rem;
+  font-weight: 500; letter-spacing: 0.04em;
+}
+.projCardTop { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+.projEmoji { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+.projCardMeta { text-align: right; }
+.projCardTitle { font-family: var(--font-syne),sans-serif; font-size: 18px; font-weight: 700; color: #eeeae4; margin-bottom: 0.2rem; }
+.projCardSub { font-size: 11px; color: #636360; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.projCardDesc { font-size: 13px; color: #888884; line-height: 1.65; margin-bottom: 1rem; }
+.projScreens { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.projScreen { background: rgba(240,168,64,0.08); border: 0.5px solid rgba(240,168,64,0.2); border-radius: 6px; padding: 4px 10px; font-size: 11px; color: #f0a840; }
+.projBtns { display: flex; gap: 0.6rem; margin-top: 1.1rem; flex-wrap: wrap; }
+.projBtnPrimary { padding: 8px 18px; border-radius: 100px; font-size: 12px; font-weight: 600; text-decoration: none; transition: opacity 0.2s, transform 0.2s; }
+.projBtnPrimary:hover { opacity: 0.85; transform: translateY(-1px); }
+.projBtnOutline { padding: 8px 18px; border-radius: 100px; font-size: 12px; border: 0.5px solid; text-decoration: none; transition: opacity 0.2s; background: transparent; }
+.projBtnOutline:hover { opacity: 0.75; }
+
+/* ── CASE STUDY ── */
+.casePreview { margin: 2rem 0; }
+.casePreviewInner { background: #141416; border: 0.5px solid rgba(240,168,64,0.2); border-radius: 18px; padding: 2rem; text-align: center; }
+.casePreviewScreens { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.caseScreen {
+  width: 80px; height: 120px; border-radius: 12px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-size: 1.5rem; gap: 6px; border: 0.5px solid rgba(240,168,64,0.15);
+}
+.caseScreen span { font-size: 10px; color: #636360; letter-spacing: 0.06em; }
+.caseProtoBtn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #f0a840; color: #09090a;
+  padding: 12px 28px; border-radius: 100px;
+  font-size: 13px; font-weight: 700; text-decoration: none;
+  transition: transform 0.2s, opacity 0.2s;
+  letter-spacing: 0.02em;
+}
+.caseProtoBtn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+.caseSteps { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 2rem 0; }
+.caseStep { background: #141416; border: 0.5px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 1.3rem; transition: border-color 0.2s; }
+.caseStep:hover { border-color: rgba(255,255,255,0.14); }
+.caseStepNum { font-family: var(--font-syne),sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; margin-bottom: 0.5rem; }
+.caseStepIcon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+.caseStepTitle { font-family: var(--font-syne),sans-serif; font-size: 13px; font-weight: 700; color: #eeeae4; margin-bottom: 0.6rem; }
+.caseStepPoints { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+.caseStepPoints li { font-size: 11.5px; color: #636360; padding-left: 0.8rem; position: relative; line-height: 1.5; }
+.caseStepPoints li::before { content: '–'; position: absolute; left: 0; color: #3a3a3a; }
+
+.caseTools { background: #141416; border: 0.5px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 1.3rem 1.5rem; }
+.caseToolsTitle { font-family: var(--font-syne),sans-serif; font-size: 11px; font-weight: 700; color: #f0a840; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.caseToolsList { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.caseToolChip { background: rgba(240,168,64,0.08); border: 0.5px solid rgba(240,168,64,0.2); border-radius: 100px; padding: 5px 14px; font-size: 12px; color: #f0a840; }
+
+/* ── MOBILE CASE STUDY ── */
+@media (max-width: 768px) {
+  .projCards { grid-template-columns: 1fr; }
+  .projCardFeatured { grid-column: 1; }
+  .caseSteps { grid-template-columns: 1fr; }
+  .casePreviewScreens { gap: 0.5rem; }
+  .caseScreen { width: 60px; height: 90px; font-size: 1.2rem; }
+}
+
+/* Contact availability badge */
+.contactAvailBadge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(93,202,165,0.08);
+  border: 0.5px solid rgba(93,202,165,0.25);
+  border-radius: 100px; padding: 7px 18px;
+  font-size: 12px; color: #5dcaa5;
+  margin-bottom: 1.5rem; font-weight: 500;
+  text-align: center; flex-wrap: wrap; justify-content: center;
+}
