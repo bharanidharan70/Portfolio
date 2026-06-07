@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import styles from '@/styles/HeroSection.module.css'
 
 export default function HeroSection() {
@@ -69,21 +70,14 @@ export default function HeroSection() {
         .fromTo(`.${styles.desc}`,{opacity:0,y:18},{opacity:1,y:0,duration:0.75,ease:'power3.out'},'-=0.55')
         .fromTo(`.${styles.actions}`,{opacity:0,y:16},{opacity:1,y:0,duration:0.7,ease:'power3.out'},'-=0.5')
         .fromTo(`.${styles.stats}`,{opacity:0},{opacity:1,duration:0.6},'-=0.3')
+        .fromTo(`.${styles.profileWrap}`,{opacity:0,x:30},{opacity:1,x:0,duration:0.9,ease:'power3.out'},'-=0.8')
     })
   }, [])
 
   useEffect(() => { const t = setTimeout(()=>setShowBadge(false),4500); return ()=>clearTimeout(t) }, [])
 
-  const toggleMute = () => {
-    if (videoRef.current) videoRef.current.muted = !muted
-    if (bgVideoRef.current) bgVideoRef.current.muted = !muted
-    setMuted(m=>!m)
-  }
-  const togglePlay = () => {
-    if (videoRef.current) playing ? videoRef.current.pause() : videoRef.current.play()
-    if (bgVideoRef.current) playing ? bgVideoRef.current.pause() : bgVideoRef.current.play()
-    setPlaying(p=>!p)
-  }
+  const toggleMute = () => { if (videoRef.current) videoRef.current.muted = !muted; if (bgVideoRef.current) bgVideoRef.current.muted = !muted; setMuted(m=>!m) }
+  const togglePlay = () => { if (videoRef.current) playing ? videoRef.current.pause() : videoRef.current.play(); if (bgVideoRef.current) playing ? bgVideoRef.current.pause() : bgVideoRef.current.play(); setPlaying(p=>!p) }
 
   return (
     <section className={styles.hero} id="home">
@@ -95,32 +89,49 @@ export default function HeroSection() {
       <div className={styles.gradBottom} />
 
       <div className={styles.content}>
-        <div className={styles.eyebrow}>WordPress Developer & UI/UX Designer · Tamil Nadu · 2026</div>
-        <h1 className={styles.h1}>
-          <span className={styles.line1}>BHARANI</span>
-          <span className={styles.line2}>DHARAN<em>M</em></span>
-          <span className={styles.line3}>Building digital experiences<br />that feel alive.</span>
-        </h1>
-        <p className={styles.desc}>
-          Passionate WordPress Developer & UI/UX Designer crafting responsive, SEO-friendly websites and intuitive interfaces.
-        </p>
-        <div className={styles.actions}>
-          <a href="#work"><button className={styles.btnPrimary}>View my work ↓</button></a>
-          <a href="#contact"><button className={styles.btnSecondary}>Get in touch</button></a>
-          <a
-            href="/assets/Bharanidharan_Resume.pdf"
-            download="Bharanidharan_M_Resume.pdf"
-            className={styles.btnResume}
-          >
-            ↓ Download CV
-          </a>
+        <div className={styles.textCol}>
+          <div className={styles.eyebrow}>WordPress Developer & UI/UX Designer · Tamil Nadu · 2026</div>
+          <h1 className={styles.h1}>
+            <span className={styles.line1}>BHARANI</span>
+            <span className={styles.line2}>DHARAN<em>M</em></span>
+            <span className={styles.line3}>Building digital experiences<br />that feel alive.</span>
+          </h1>
+          <p className={styles.desc}>
+            Passionate WordPress Developer & UI/UX Designer crafting responsive, SEO-friendly websites and intuitive interfaces.
+          </p>
+          <div className={styles.actions}>
+            <a href="#work"><button className={styles.btnPrimary}>View my work ↓</button></a>
+            <a href="#contact"><button className={styles.btnSecondary}>Get in touch</button></a>
+            <a href="/assets/Bharanidharan_Resume.pdf" download="Bharanidharan_M_Resume.pdf" className={styles.btnResume}>↓ Download CV</a>
+          </div>
+          <div className={styles.stats}>
+            <div><span className={styles.statNum}>3+</span><span className={styles.statLabel}>Projects</span></div>
+            <div className={styles.statDivider} />
+            <div><span className={styles.statNum}>2</span><span className={styles.statLabel}>Internships</span></div>
+            <div className={styles.statDivider} />
+            <div><span className={styles.statNum}>MCA</span><span className={styles.statLabel}>Pursuing</span></div>
+          </div>
         </div>
-        <div className={styles.stats}>
-          <div><span className={styles.statNum}>3+</span><span className={styles.statLabel}>Projects</span></div>
-          <div className={styles.statDivider} />
-          <div><span className={styles.statNum}>2</span><span className={styles.statLabel}>Internships</span></div>
-          <div className={styles.statDivider} />
-          <div><span className={styles.statNum}>MCA</span><span className={styles.statLabel}>Pursuing</span></div>
+
+        {/* Profile photo */}
+        <div className={styles.profileWrap}>
+          <div className={styles.profileRing}>
+            <div className={styles.profileImgWrap}>
+              <Image
+                src="/assets/profile.jpg"
+                alt="Bharanidharan M"
+                width={260}
+                height={320}
+                className={styles.profileImg}
+                priority
+              />
+            </div>
+            <div className={styles.profileBadge}>
+              <span className={styles.profileBadgeDot} />
+              Open to work
+            </div>
+            <div className={styles.profileRole}>UI/UX · WordPress Dev</div>
+          </div>
         </div>
       </div>
 
