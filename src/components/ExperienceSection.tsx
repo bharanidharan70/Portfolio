@@ -7,14 +7,30 @@ const experience = [
     role: 'WordPress Developer Intern',
     company: 'Faveo IT Solutions',
     period: 'Feb 2026 – Apr 2026',
-    points: ['Working on live WordPress projects', 'Theme customization and plugin usage', 'Handling real-time website updates and UI'],
+    points: [
+      'Developed and customized WordPress themes for client projects',
+      'Configured and integrated plugins for extended functionality',
+      'Handled real-time website updates, UI improvements and bug fixes',
+      'Worked on Figma designs and translated them into WordPress layouts',
+      'Applied CSS, HTML and JavaScript for front-end customizations',
+      'Used Git & GitHub for version control and code collaboration',
+      'Assisted in Bootstrap-based responsive layout implementation',
+      'Conducted UI/UX improvements using Adobe XD and Figma wireframes',
+    ],
     color: '#b8b0f0',
   },
   {
     role: 'Web Developer Intern',
     company: 'NEOWEP Software Technology',
     period: 'Jun 2024 – Jul 2024',
-    points: ['Built responsive websites using HTML, CSS, JS', 'Worked on WordPress projects and landing pages', 'Learned SEO optimization and performance tuning'],
+    points: [
+      'Built fully responsive websites using HTML, CSS and JavaScript',
+      'Designed UI mockups and wireframes using Figma and Adobe XD',
+      'Implemented Bootstrap for mobile-first responsive layouts',
+      'Worked on WordPress projects including landing pages and portfolios',
+      'Applied UI/UX principles for improved user experience and flow',
+      'Learned SEO optimization techniques and performance tuning',
+    ],
     color: '#5dcaa5',
   },
 ]
@@ -36,7 +52,7 @@ export default function ExperienceSection() {
           if (e.target === ref.current) videoRef.current?.play()
         }
       }),
-      { threshold: 0.08 }
+      { threshold: 0.05 }
     )
     ref.current?.querySelectorAll(`.${styles.reveal}`).forEach(el => observer.observe(el))
     if (ref.current) observer.observe(ref.current)
@@ -46,7 +62,7 @@ export default function ExperienceSection() {
     <section className={styles.section} id="experience" ref={ref}>
       <div className={styles.inner}>
 
-        {/* Experience column */}
+        {/* Left column */}
         <div className={styles.leftCol}>
           <div className={`${styles.eyebrow} ${styles.reveal}`}>Career</div>
           <div className={`${styles.heading} ${styles.reveal}`}>Experience</div>
@@ -66,7 +82,6 @@ export default function ExperienceSection() {
             ))}
           </div>
 
-          {/* Education */}
           <div className={`${styles.eyebrow} ${styles.reveal}`} style={{ marginTop: '2.5rem' }}>Education</div>
           <div className={`${styles.heading} ${styles.reveal}`}>Academic Background</div>
           <div className={styles.timeline}>
