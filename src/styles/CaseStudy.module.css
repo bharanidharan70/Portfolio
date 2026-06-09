@@ -44,7 +44,7 @@
 
 /* Phone */
 .phoneCol { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-.phone { position: relative; width: 230px; height: 470px; background: #1c1c1e; border-radius: 36px; border: 2px solid rgba(255,255,255,0.14); box-shadow: 0 0 0 5px rgba(255,255,255,0.03), 0 24px 56px rgba(0,0,0,0.65); overflow: hidden; flex-shrink: 0; }
+.phone { position: relative; width: 320px; height: 650px; background: #1c1c1e; border-radius: 36px; border: 2px solid rgba(255,255,255,0.14); box-shadow: 0 0 0 5px rgba(255,255,255,0.03), 0 24px 56px rgba(0,0,0,0.65); overflow: hidden; flex-shrink: 0; }
 .phoneNotch { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 80px; height: 23px; background: #09090a; border-radius: 12px; z-index: 10; }
 .phoneScreen { position: absolute; inset: 0; overflow: hidden; border-radius: 34px; }
 .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.55s ease; }
@@ -55,12 +55,20 @@
 .slideDesc { font-size: 12px; color: #636360; line-height: 1.6; display: block; }
 
 /* Vertical thumbnails */
-.vThumbs { display: flex; flex-direction: column; gap: 0.5rem; overflow-y: auto; max-height: 490px; padding-right: 2px; }
+.vThumbs { display:flex;
+ flex-direction:column;
+ gap:20px;
+ max-height:650px;
+ overflow-y:auto; }
 .vThumbs::-webkit-scrollbar { width: 2px; }
 .vThumbs::-webkit-scrollbar-thumb { background: #2a2a2e; }
 .vThumb { background: none; border: none; cursor: pointer; padding: 0; display: flex; flex-direction: column; gap: 3px; transition: transform 0.2s; width: 100%; }
 .vThumb:hover { transform: translateX(2px); }
-.vThumbImg { position: relative; width: 100%; height: 88px; border-radius: 8px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.07); transition: border-color 0.25s; }
+.vThumbImg { position:relative;
+ width:100%;
+ height:260px;
+ border-radius:12px;
+ overflow:hidden;}
 .vThumbOn .vThumbImg { border-color: #f0a840; box-shadow: 0 0 0 2px rgba(240,168,64,0.18); }
 .vThumbGlow { position: absolute; inset: 0; background: rgba(240,168,64,0.1); }
 .vThumbTxt { font-size: 9px; color: #636360; letter-spacing: 0.04em; text-align: center; }
@@ -75,7 +83,10 @@
 .macBar { display: flex; align-items: center; gap: 6px; padding: 7px 12px; background: #2a2a2e; border-bottom: 1px solid rgba(255,255,255,0.06); }
 .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 .macAddr { flex: 1; text-align: center; font-size: 10px; color: #636360; background: rgba(255,255,255,0.05); border-radius: 4px; padding: 2px 8px; }
-.macImgWrap { position: relative; width: 100%; height: 220px; overflow: hidden; }
+.macImgWrap {  position:relative;
+ width:100%;
+ height:520px;
+ overflow:hidden; }
 .macMeta { display: flex; flex-direction: column; gap: 4px; padding: 8px 2px 0; }
 .macStep { font-family: var(--font-syne),sans-serif; font-size: 13px; font-weight: 600; color: #888884; }
 .macDesc { font-size: 12px; color: #636360; line-height: 1.65; max-width: 720px; }
