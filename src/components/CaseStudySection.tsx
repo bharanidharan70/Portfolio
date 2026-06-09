@@ -119,7 +119,7 @@ export default function CaseStudySection() {
                 <button key={i} onClick={() => setPizzaIdx(i)}
                   className={i===pizzaIdx ? `${styles.vThumb} ${styles.vThumbOn}` : styles.vThumb}>
                   <div className={styles.vThumbImg}>
-                    <Image src={s.src} alt={s.label} fill sizes="120px" style={{objectFit:'cover',objectPosition:'top center'}}/>
+                    <Image src={s.src} alt={s.label} fill sizes="120px" style={{objectFit:'contain',objectPosition:'center'}}/>
                     {i===pizzaIdx && <div className={styles.vThumbGlow}/>}
                   </div>
                   <span className={i===pizzaIdx ? `${styles.vThumbTxt} ${styles.vThumbTxtOn}` : styles.vThumbTxt}>{s.label}</span>
