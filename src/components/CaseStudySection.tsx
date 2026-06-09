@@ -101,7 +101,7 @@ export default function CaseStudySection() {
                 <div className={styles.phoneScreen}>
                   {pizzaScreens.map((s,i) => (
                     <div key={i} className={i===pizzaIdx ? `${styles.slide} ${styles.slideOn}` : styles.slide}>
-                      <Image src={s.src} alt={s.label} fill sizes="240px" style={{objectFit:'contain',objectPosition:'center'}}/>
+                      <Image src={s.src} alt={s.label} fill sizes="240px" style={{objectFit:'cover',objectPosition:'top center'}}/>
                     </div>
                   ))}
                 </div>
@@ -119,7 +119,7 @@ export default function CaseStudySection() {
                 <button key={i} onClick={() => setPizzaIdx(i)}
                   className={i===pizzaIdx ? `${styles.vThumb} ${styles.vThumbOn}` : styles.vThumb}>
                   <div className={styles.vThumbImg}>
-                    <Image src={s.src} alt={s.label} fill sizes="120px" style={{objectFit:'contain',objectPosition:'center'}}/>
+                    <Image src={s.src} alt={s.label} fill sizes="120px" style={{objectFit:'cover',objectPosition:'top center'}}/>
                     {i===pizzaIdx && <div className={styles.vThumbGlow}/>}
                   </div>
                   <span className={i===pizzaIdx ? `${styles.vThumbTxt} ${styles.vThumbTxtOn}` : styles.vThumbTxt}>{s.label}</span>
@@ -184,7 +184,7 @@ export default function CaseStudySection() {
                     <div className={styles.macAddr}>faveo-helpdesk.com</div>
                   </div>
                   <div className={styles.macImgWrap}>
-                    <Image src={s.src} alt={s.label} fill sizes="900px" style={{objectFit:'contain',objectPosition:'center'}}/>
+                    <Image src={s.src} alt={s.label} fill sizes="900px" style={{objectFit:'cover',objectPosition:'top center'}}/>
                   </div>
                 </div>
                 <div className={styles.macMeta}>
