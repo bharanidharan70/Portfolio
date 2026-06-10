@@ -4,7 +4,21 @@ import styles from '@/styles/Sections.module.css'
 
 const projects = [
   {
-    idx: '01',
+  idx: '01',
+  emoji: '🏋️',
+  title: 'Fitness Tracker App',
+  subtitle: 'AI Generated UI/UX Design',
+  desc: 'Designed a modern fitness tracking application using Google Stitch. Covers authentication, workout tracking, activity monitoring, HIIT sessions and user engagement flows.',
+  tags: ['Google Stitch', 'UI Design', 'Mobile UX', 'Prototype', 'Fitness App'],
+  type: 'UI/UX Case Study',
+  color: '#22C55E',
+  figma: 'https://stitch.withgoogle.com/preview/6539113076398028289?node-id=2d4e9f5f3b1945598b7c7f53bfe3af93',
+  live: null,
+  screens: ['🔐 Login','🏠 Home','🏃 Activity','💪 Workout'],
+  highlight: true,
+},
+  {
+    idx: '02',
     emoji: '🍕',
     title: 'Pizza Delivery App',
     subtitle: 'UI/UX Case Study',
@@ -18,7 +32,7 @@ const projects = [
     highlight: true,
   },
   {
-    idx: '02',
+    idx: '03',
     emoji: '🖥️',
     title: 'Faveo IT Service Desk',
     subtitle: 'Enterprise UI/UX Redesign',
@@ -32,7 +46,7 @@ const projects = [
     highlight: true,
   },
   {
-    idx: '03',
+    idx: '04',
     emoji: '🛍️',
     title: 'E-Commerce Store',
     subtitle: 'WordPress Development',
@@ -46,7 +60,7 @@ const projects = [
     highlight: false,
   },
   {
-    idx: '04',
+    idx: '05',
     emoji: '🎮',
     title: 'Gaming Community Platform',
     subtitle: 'Full Stack Web App',
@@ -60,7 +74,7 @@ const projects = [
     highlight: false,
   },
   {
-    idx: '05',
+    idx: '06',
     emoji: '🍽️',
     title: 'Restaurant Management Website',
     subtitle: 'Frontend Development',
