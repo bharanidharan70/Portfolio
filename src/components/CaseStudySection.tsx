@@ -122,11 +122,11 @@ export default function CaseStudySection() {
             🏋️ Fitness Tracker App
           </button>
           <button onClick={() => setTab(1)}
-            className={tab === 0 ? `${styles.tab} ${styles.tabPizzaActive}` : styles.tab}>
+            className={tab === 1 ? `${styles.tab} ${styles.tabPizzaActive}` : styles.tab}>
             🍕 Pizza Delivery App
           </button>
           <button onClick={() => setTab(2)}
-            className={tab === 1 ? `${styles.tab} ${styles.tabFaveoActive}` : styles.tab}>
+            className={tab === 2 ? `${styles.tab} ${styles.tabFaveoActive}` : styles.tab}>
             🖥️ Faveo IT Service Desk
           </button>
         </div>
@@ -345,7 +345,7 @@ export default function CaseStudySection() {
         </div>
 
         {/* ══ PIZZA ══ */}
-        <div className={tab === 0 ? `${cls} ${styles.pizzaBg}` : styles.hidden}>
+        <div className={tab === 1 ? `${cls} ${styles.pizzaBg}` : styles.hidden}>
           <div className={styles.cardTop}>
             <div className={styles.cardEyebrow} style={{ color: '#f0a840' }}>🍕 Mobile App · UI/UX Design</div>
             <div className={styles.cardTitle}>Pizza Delivery App</div>
@@ -424,7 +424,7 @@ export default function CaseStudySection() {
         </div>
 
         {/* ══ FAVEO ══ */}
-        <div className={tab === 1 ? `${cls} ${styles.faveoBg}` : styles.hidden}>
+        <div className={tab === 2 ? `${cls} ${styles.faveoBg}` : styles.hidden}>
           <div className={styles.cardTop}>
             <div className={styles.cardEyebrow} style={{ color: '#4C6EF5' }}>🖥️ Enterprise Web App · UI/UX Redesign</div>
             <div className={styles.cardTitle}>Faveo IT Service Desk</div>
