@@ -6,7 +6,7 @@ const experience = [
   {
     role: 'WordPress Developer Intern',
     company: 'Faveo IT Solutions',
-    period: 'Feb 2026 – Apr 2026',
+    period: 'Feb 2026 – May 2026',
     points: [
       'Developed and customized WordPress themes for client projects',
       'Configured and integrated plugins for extended functionality',
