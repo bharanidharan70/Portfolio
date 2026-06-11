@@ -21,6 +21,7 @@
 .tab:hover { border-color: rgba(255,255,255,0.18); color: #eeeae4; }
 .tabPizzaActive { border-color: rgba(240,168,64,0.45) !important; color: #f0a840 !important; background: rgba(240,168,64,0.08) !important; font-weight: 700; }
 .tabFaveoActive { border-color: rgba(76,110,245,0.45) !important; color: #4C6EF5 !important; background: rgba(76,110,245,0.08) !important; font-weight: 700; }
+.tabFitnessActive { border-color: rgba(6, 231, 21, 0.704) !important; color: #32ef35 !important; background: rgba(6, 231, 21, 0.08) !important; font-weight: 700; }
 
 /* Card */
 .card { border-radius: 22px; padding: 2.5rem; border: 0.5px solid rgba(255,255,255,0.08); }
